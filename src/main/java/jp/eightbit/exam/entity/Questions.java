@@ -5,32 +5,32 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
-@Entity
+//@Entity
 @Table(name = "questions")
 public class Questions {
 
-	@Id
-	@Column(name = "id")
+//	@Id
+//	@Column(name = "id")
 	private long questionId;
-	@Column(name = "sentence")
+//	@Column(name = "sentence")
 	private String questionSentence;
-	@Column(name = "option1_value")
+//	@Column(name = "option1_value")
 	private String option1Value;
-	@Column(name = "option1_label")
+//	@Column(name = "option1_label")
 	private String option1Label;
-	@Column(name = "option2_value")
+//	@Column(name = "option2_value")
 	private String option2Value;
-	@Column(name = "option2_label")
+//	@Column(name = "option2_label")
 	private String option2Label;
-	@Column(name = "option3_value")
+//	@Column(name = "option3_value")
 	private String option3Value;
-	@Column(name = "option3_label")
+//	@Column(name = "option3_label")
 	private String option3Label;
-	@Column(name = "option4_value")
+//	@Column(name = "option4_value")
 	private String option4Value;
-	@Column(name = "option4_label")
+//	@Column(name = "option4_label")
 	private String option4Label;
-	@Column(name = "answer")
+//	@Column(name = "answer")
 	private String answer;
 	
 	public long getQuestionId() {

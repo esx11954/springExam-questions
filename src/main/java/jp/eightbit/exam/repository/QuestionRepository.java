@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import jp.eightbit.exam.entity.Questions;
 
-@Repository
-public interface QuestionRepository extends JpaRepository<Questions, Long>{
+//@Repository
+public interface QuestionRepository /*extends JpaRepository<Questions, Long>*/{
 
 }

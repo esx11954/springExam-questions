@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jp.eightbit.exam.entity.Questions;
+import jp.eightbit.exam.mapper.QuestionMapper;
 import jp.eightbit.exam.model.QuestionModel;
 import jp.eightbit.exam.model.QuestionResult;
 import jp.eightbit.exam.repository.QuestionRepository;
@@ -14,16 +15,20 @@ import jp.eightbit.exam.repository.QuestionRepository;
 @Service
 public class QuestionService {
 	@Autowired
-	private QuestionRepository questionRepo;
+	private QuestionMapper questionMapper;
+	//private QuestionRepository questionRepo;
+	
 	
 	public Questions getQuestion(Integer index) {
-		Questions q = questionRepo.getReferenceById(index.longValue());
+//		Questions q = questionRepo.getReferenceById(index.longValue());
+		Questions q = questionMapper.findOne(index.longValue());
+		System.out.println(q.toString());
 
 		return q;
 	}
 	
 	public List<QuestionResult> getResult(QuestionModel questionModel){
-		List<Questions> questionList = questionRepo.findAll();
+		List<Questions> questionList = questionMapper.findAll();
 		QuestionResult qr = null;
 		List<QuestionResult> resultList = new ArrayList<>();
 		for(int i = 0; i < questionList.size(); i++) {
