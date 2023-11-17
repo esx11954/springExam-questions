@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Spring課題</title>
+</head>
+<body>
+	<h1>IT問題集</h1>
+	<hr>
+	<div>
+		<p>これからIT関連の問題を3問出題します。</p>
+		<p>名前を入力して【開始】ボタンをクリックしてください。</p>
+	</div>
+	<div>
+		<form th:action="@{/nameCheck}" th:object="${questionModel}" method="post">
+			<p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+			<label>名前：</label>
+			<input type="text" th:field="*{name}">
+			<input type="submit">
+		</form>
+	</div>
+</body>
+</html>

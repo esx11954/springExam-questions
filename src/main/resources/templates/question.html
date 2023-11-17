@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Spring課題</title>
+</head>
+<body>
+	<h1 th:text="|問題 ${index}|"></h1>
+	<hr>
+	<div>
+		<p th:text="${question.questionSentence}"></p>
+	</div>
+	<form th:action="@{/answer/__${index}__}" method="post">
+		<label>
+			<input type="radio" th:name="|answer${index}|" th:value="${question.option1Value}" checked>
+			[[${question.option1Value}]]. [[${question.option1Label}]]
+		</label>
+		<br>
+		<label>
+			<input type="radio" th:name="|answer${index}|" th:value="${question.option2Value}">
+			[[${question.option2Value}]]. [[${question.option2Label}]]
+		</label>
+		<br>
+		<label>
+			<input type="radio" th:name="|answer${index}|" th:value="${question.option3Value}">
+			[[${question.option3Value}]]. [[${question.option3Label}]]
+		</label>
+		<br>
+		<label>
+			<input type="radio" th:name="|answer${index}|" th:value="${question.option4Value}">
+			[[${question.option4Value}]]. [[${question.option4Label}]]
+		</label>
+		<br>
+		<input type="submit">
+	</form>
+	<a th:href="@{/}">初めからやり直す</a>
+</body>
+</html>

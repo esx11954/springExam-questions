@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Spring課題</title>
+</head>
+<body>
+	<h1>結果画面</h1>
+	<hr>
+	<div>
+		<div th:each="result : ${resultList}">
+			<table>
+				<tr>
+					<th>問題文</th><td th:text="${result.questionSentence}"></td>	
+				</tr>
+				<tr>
+					<th>答え</th><td th:text="|${result.answerValue}. ${result.answerLabel}|"></td>	
+				</tr>
+				<tr>
+					<th>あなたの答え</th><td th:text="|${result.userAnswerValue}. ${result.userAnswerLabel}|"></td>	
+				</tr>
+			</table>
+		</div>
+		<p>[[${name}]]さんは、[[${questionCount}]]問中[[${correctCount}]]問正解</p>
+		<a th:href="@{/}">topに戻る</a>
+	</div>
+</body>
+</html>

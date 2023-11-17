@@ -1,0 +1,6 @@
+jp.eightbit.exam
+jp.eightbit.exam.controller
+jp.eightbit.exam.entity
+jp.eightbit.exam.model
+jp.eightbit.exam.repository
+jp.eightbit.exam.service
